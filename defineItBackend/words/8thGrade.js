@@ -1,4 +1,4 @@
-let vocabWords = [
+const eigthGradeWords = [
   "abandon",
   "abundant",
   "accessible",
@@ -158,3 +158,4 @@ let vocabWords = [
   "vulnerable",
   "warrant",
 ];
+export default eigthGradeWords
