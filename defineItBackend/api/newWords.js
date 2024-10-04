@@ -4,8 +4,8 @@ import { Router } from "express";
 
 const router = Router();
 
-// Example route
 router.get("/:wordType", async (req, res, next) => {
+
     let wordType = req.params.wordType
 let word
     if (wordType === "8"){
@@ -17,7 +17,7 @@ word = eighthGradeWords[Math.floor(Math.random() * eighthGradeWords.length)]
         console.log("eighthGradeWords:",word);
 
 
-        res.json(eighthGradeWords);  // Replace `scores` with actual response data
+        res.send(word);  // Replace `scores` with actual response data
     } catch (err) {
         next(err);
     }

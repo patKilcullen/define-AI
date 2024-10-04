@@ -64,6 +64,7 @@ import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
 import router from "./api/index.js";
+import cors from "cors";
 
 const app = express();
 
@@ -77,6 +78,7 @@ app.use(morgan("dev"));
 // Body parsing middleware
 app.use(express.json());
 
+ app.use(cors());
 // Use the router from api/index.js
 app.use("/api", router);
 
