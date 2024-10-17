@@ -64,17 +64,18 @@ router.patch("/:gameId/changeTurn", async (req, res, next) => {
 });
 
 // Get All Users Games
-// router.get("/", async (req, res, next) => {
-//   try {
-//     const games = await Game.findAll({ where: {},
-//       include: [{ model: User, as: "owner" }],
-//     });
-
-//     res.json(games);
-//   } catch (err) {
-//     next(err);
-//   }
-// });
+router.get("/", async (req, res, next) => {
+  console.log("HGMccccccAMRMER");
+  try {
+    const games = await Game.findAll({ where: {},
+      include: [{ model: User, as: "owner" }],
+    });
+console.log("HGMAMRMER")
+    res.json(games);
+  } catch (err) {
+    next(err);
+  }
+});
 
 // Get Single Game
 router.get("/:id", async (req, res, next) => {
@@ -109,7 +110,7 @@ router.get("/:id", async (req, res, next) => {
 router.post("/", async (req, res, next) => {
   try {
     const game = await Game.create(req.body);
-
+console.log("GAG GAG GAME: ", game)
     res.json(game);
   } catch (err) {
     next(err);
